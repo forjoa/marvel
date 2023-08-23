@@ -45,3 +45,10 @@ ul {
 .read-the-docs {
   color: #888;
 }
+
+input {
+  width: 98%;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+}

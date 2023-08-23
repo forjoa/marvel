@@ -13,7 +13,7 @@ const CharacterList = ({ characters }) => {
             <ul style={ulStyles}>
                 {characters.map(character => (
                     <li key={character.id}>
-                        <button onClick={() => handleCharacterClick(character.id)}>
+                        <button onClick={() => handleCharacterClick(character.id)} style={buttonStyle}>
                             {character.name}
                         </button>
                         {expandedCharacterId === character.id && (
@@ -53,5 +53,9 @@ const imageStyles = {
     borderRadius: '15px',
     textAlign: 'center'
 };
+
+const buttonStyle = {
+    width: '100%'
+}
 
 export default CharacterList;

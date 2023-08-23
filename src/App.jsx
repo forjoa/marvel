@@ -9,7 +9,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const charactersPerPage = 20; // Cantidad de personajes por página
+  const charactersPerPage = 10; 
 
   const publicKey = '3870783a5a294c792ab18cb38a8be804';
   const privateKey = '0d5e1491a55ef08c26cfb844dfcf1555e3b0737f';
@@ -19,7 +19,7 @@ function App() {
     const timestamp = Date.now();
     const hash = md5(timestamp + privateKey + publicKey);
 
-    let apiUrl = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&offset=${offset}`;
+    let apiUrl = `https://gateway.marvel.com/v1/public/characters?ts=${timestamp}&apikey=${publicKey}&hash=${hash}&limit=${charactersPerPage}&offset=${offset}`;
 
     if (searchTerm) {
       apiUrl += `&nameStartsWith=${searchTerm}`;
